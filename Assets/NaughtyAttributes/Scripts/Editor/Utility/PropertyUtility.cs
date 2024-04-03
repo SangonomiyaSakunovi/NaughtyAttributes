@@ -28,7 +28,7 @@ namespace NaughtyAttributes.Editor
 
         public static GUIContent GetLabel(SerializedProperty property)
         {
-            LabelAttribute labelAttribute = GetAttribute<LabelAttribute>(property);
+            GUILabelAttribute labelAttribute = GetAttribute<GUILabelAttribute>(property);
             string labelText = (labelAttribute == null)
                 ? property.displayName
                 : labelAttribute.Label;
@@ -39,7 +39,7 @@ namespace NaughtyAttributes.Editor
 
         public static void CallOnValueChangedCallbacks(SerializedProperty property)
         {
-            OnValueChangedAttribute[] onValueChangedAttributes = GetAttributes<OnValueChangedAttribute>(property);
+            GUIOnValueChangedAttribute[] onValueChangedAttributes = GetAttributes<GUIOnValueChangedAttribute>(property);
             if (onValueChangedAttributes.Length == 0)
             {
                 return;
@@ -70,13 +70,13 @@ namespace NaughtyAttributes.Editor
 
         public static bool IsEnabled(SerializedProperty property)
         {
-            ReadOnlyAttribute readOnlyAttribute = GetAttribute<ReadOnlyAttribute>(property);
+            GUIReadOnlyAttribute readOnlyAttribute = GetAttribute<GUIReadOnlyAttribute>(property);
             if (readOnlyAttribute != null)
             {
                 return false;
             }
 
-            EnableIfAttributeBase enableIfAttribute = GetAttribute<EnableIfAttributeBase>(property);
+            GUIEnableIfAttributeBase enableIfAttribute = GetAttribute<GUIEnableIfAttributeBase>(property);
             if (enableIfAttribute == null)
             {
                 return true;
@@ -121,7 +121,7 @@ namespace NaughtyAttributes.Editor
 
         public static bool IsVisible(SerializedProperty property)
         {
-            ShowIfAttributeBase showIfAttribute = GetAttribute<ShowIfAttributeBase>(property);
+            GUIShowIfAttributeBase showIfAttribute = GetAttribute<GUIShowIfAttributeBase>(property);
             if (showIfAttribute == null)
             {
                 return true;
@@ -224,10 +224,10 @@ namespace NaughtyAttributes.Editor
             return conditionValues;
         }
 
-        internal static bool GetConditionsFlag(List<bool> conditionValues, EConditionOperator conditionOperator, bool invert)
+        internal static bool GetConditionsFlag(List<bool> conditionValues, GUIConditionOperator conditionOperator, bool invert)
         {
             bool flag;
-            if (conditionOperator == EConditionOperator.And)
+            if (conditionOperator == GUIConditionOperator.And)
             {
                 flag = true;
                 foreach (var value in conditionValues)

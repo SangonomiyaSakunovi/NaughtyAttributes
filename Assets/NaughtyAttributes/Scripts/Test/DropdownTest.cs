@@ -5,7 +5,7 @@ namespace NaughtyAttributes.Test
 {
     public class DropdownTest : MonoBehaviour
     {
-        [Dropdown("intValues")]
+        [GUIDropdown("intValues")]
         public int intValue;
 
 #pragma warning disable 414
@@ -18,7 +18,7 @@ namespace NaughtyAttributes.Test
     [System.Serializable]
     public class DropdownNest1
     {
-        [Dropdown("StringValues")]
+        [GUIDropdown("StringValues")]
         public string stringValue;
 
         private List<string> StringValues { get { return new List<string>() { "A", "B", "C" }; } }
@@ -29,12 +29,12 @@ namespace NaughtyAttributes.Test
     [System.Serializable]
     public class DropdownNest2
     {
-        [Dropdown("GetVectorValues")]
+        [GUIDropdown("GetVectorValues")]
         public Vector3 vectorValue;
 
-        private DropdownList<Vector3> GetVectorValues()
+        private GUIDropdownList<Vector3> GetVectorValues()
         {
-            return new DropdownList<Vector3>()
+            return new GUIDropdownList<Vector3>()
             {
                 { "Right", Vector3.right },
                 { "Up", Vector3.up },

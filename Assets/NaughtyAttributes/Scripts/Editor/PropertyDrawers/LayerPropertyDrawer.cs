@@ -4,7 +4,7 @@ using System;
 
 namespace NaughtyAttributes.Editor
 {
-    [CustomPropertyDrawer(typeof(LayerAttribute))]
+    [CustomPropertyDrawer(typeof(GUILayerAttribute))]
     public class LayerPropertyDrawer : PropertyDrawerBase
     {
         private const string TypeWarningMessage = "{0} must be an int or a string";

@@ -8,26 +8,26 @@ namespace NaughtyAttributes.Test
         public bool enable1;
         public bool enable2;
         public EnableIfEnum enum1;
-        [EnumFlags] public EnableIfEnumFlag enum2;
+        [GUIEnumFlags] public EnableIfEnumFlag enum2;
 
-        [EnableIf(EConditionOperator.And, "enable1", "enable2")]
-        [ReorderableList]
+        [GUIEnableIf(GUIConditionOperator.And, "enable1", "enable2")]
+        [GUIReordList]
         public int[] enableIfAll;
 
-        [EnableIf(EConditionOperator.Or, "enable1", "enable2")]
-        [ReorderableList]
+        [GUIEnableIf(GUIConditionOperator.Or, "enable1", "enable2")]
+        [GUIReordList]
         public int[] enableIfAny;
 
-        [EnableIf("enum1", EnableIfEnum.Case0)]
-        [ReorderableList]
+        [GUIEnableIf("enum1", EnableIfEnum.Case0)]
+        [GUIReordList]
         public int[] enableIfEnum;
 
-        [EnableIf("enum2", EnableIfEnumFlag.Flag0)]
-        [ReorderableList]
+        [GUIEnableIf("enum2", EnableIfEnumFlag.Flag0)]
+        [GUIReordList]
         public int[] enableIfEnumFlag;
 
-        [EnableIf("enum2", EnableIfEnumFlag.Flag0 | EnableIfEnumFlag.Flag1)]
-        [ReorderableList]
+        [GUIEnableIf("enum2", EnableIfEnumFlag.Flag0 | EnableIfEnumFlag.Flag1)]
+        [GUIReordList]
         public int[] enableIfEnumFlagMulti;
 
         public EnableIfNest1 nest1;
@@ -39,30 +39,30 @@ namespace NaughtyAttributes.Test
         public bool enable1;
         public bool enable2;
         public EnableIfEnum enum1;
-        [EnumFlags] public EnableIfEnumFlag enum2;
+        [GUIEnumFlags] public EnableIfEnumFlag enum2;
         public bool Enable1 { get { return enable1; } }
         public bool Enable2 { get { return enable2; } }
         public EnableIfEnum Enum1 { get { return enum1; } }
         public EnableIfEnumFlag Enum2 { get { return enum2; } }
 
-        [EnableIf(EConditionOperator.And, "Enable1", "Enable2")]
-        [AllowNesting] // Because it's nested we need to explicitly allow nesting
+        [GUIEnableIf(GUIConditionOperator.And, "Enable1", "Enable2")]
+        [GUIAllowNesting] // Because it's nested we need to explicitly allow nesting
         public int enableIfAll;
 
-        [EnableIf(EConditionOperator.Or, "Enable1", "Enable2")]
-        [AllowNesting] // Because it's nested we need to explicitly allow nesting
+        [GUIEnableIf(GUIConditionOperator.Or, "Enable1", "Enable2")]
+        [GUIAllowNesting] // Because it's nested we need to explicitly allow nesting
         public int enableIfAny;
 
-        [EnableIf("Enum1", EnableIfEnum.Case1)]
-        [AllowNesting] // Because it's nested we need to explicitly allow nesting
+        [GUIEnableIf("Enum1", EnableIfEnum.Case1)]
+        [GUIAllowNesting] // Because it's nested we need to explicitly allow nesting
         public int enableIfEnum;
 
-        [EnableIf("Enum2", EnableIfEnumFlag.Flag0)]
-        [AllowNesting] // Because it's nested we need to explicitly allow nesting
+        [GUIEnableIf("Enum2", EnableIfEnumFlag.Flag0)]
+        [GUIAllowNesting] // Because it's nested we need to explicitly allow nesting
         public int enableIfEnumFlag;
 
-        [EnableIf("Enum2", EnableIfEnumFlag.Flag0 | EnableIfEnumFlag.Flag1)]
-        [AllowNesting] // Because it's nested we need to explicitly allow nesting
+        [GUIEnableIf("Enum2", EnableIfEnumFlag.Flag0 | EnableIfEnumFlag.Flag1)]
+        [GUIAllowNesting] // Because it's nested we need to explicitly allow nesting
         public int enableIfEnumFlagMulti;
 
         public EnableIfNest2 nest2;
@@ -74,30 +74,30 @@ namespace NaughtyAttributes.Test
         public bool enable1;
         public bool enable2;
         public EnableIfEnum enum1;
-        [EnumFlags] public EnableIfEnumFlag enum2;
+        [GUIEnumFlags] public EnableIfEnumFlag enum2;
         public bool GetEnable1() { return enable1; }
         public bool GetEnable2() { return enable2; }
         public EnableIfEnum GetEnum1() { return enum1; }
         public EnableIfEnumFlag GetEnum2() { return enum2; }
 
-        [EnableIf(EConditionOperator.And, "GetEnable1", "GetEnable2")]
-        [MinMaxSlider(0.0f, 1.0f)] // AllowNesting attribute is not needed, because the field is already marked with a custom naughty property drawer
+        [GUIEnableIf(GUIConditionOperator.And, "GetEnable1", "GetEnable2")]
+        [GUISlider(0.0f, 1.0f)] // AllowNesting attribute is not needed, because the field is already marked with a custom naughty property drawer
         public Vector2 enableIfAll = new Vector2(0.25f, 0.75f);
 
-        [EnableIf(EConditionOperator.Or, "GetEnable1", "GetEnable2")]
-        [MinMaxSlider(0.0f, 1.0f)] // AllowNesting attribute is not needed, because the field is already marked with a custom naughty property drawer
+        [GUIEnableIf(GUIConditionOperator.Or, "GetEnable1", "GetEnable2")]
+        [GUISlider(0.0f, 1.0f)] // AllowNesting attribute is not needed, because the field is already marked with a custom naughty property drawer
         public Vector2 enableIfAny = new Vector2(0.25f, 0.75f);
 
-        [EnableIf("GetEnum1", EnableIfEnum.Case2)]
-        [MinMaxSlider(0.0f, 1.0f)] // AllowNesting attribute is not needed, because the field is already marked with a custom naughty property drawer
+        [GUIEnableIf("GetEnum1", EnableIfEnum.Case2)]
+        [GUISlider(0.0f, 1.0f)] // AllowNesting attribute is not needed, because the field is already marked with a custom naughty property drawer
         public Vector2 enableIfEnum = new Vector2(0.25f, 0.75f);
 
-        [EnableIf("GetEnum2", EnableIfEnumFlag.Flag0)]
-        [MinMaxSlider(0.0f, 1.0f)] // AllowNesting attribute is not needed, because the field is already marked with a custom naughty property drawer
+        [GUIEnableIf("GetEnum2", EnableIfEnumFlag.Flag0)]
+        [GUISlider(0.0f, 1.0f)] // AllowNesting attribute is not needed, because the field is already marked with a custom naughty property drawer
         public Vector2 enableIfEnumFlag;
 
-        [EnableIf("GetEnum2", EnableIfEnumFlag.Flag0 | EnableIfEnumFlag.Flag1)]
-        [MinMaxSlider(0.0f, 1.0f)] // AllowNesting attribute is not needed, because the field is already marked with a custom naughty property drawer
+        [GUIEnableIf("GetEnum2", EnableIfEnumFlag.Flag0 | EnableIfEnumFlag.Flag1)]
+        [GUISlider(0.0f, 1.0f)] // AllowNesting attribute is not needed, because the field is already marked with a custom naughty property drawer
         public Vector2 enableIfEnumFlagMulti;
     }
 

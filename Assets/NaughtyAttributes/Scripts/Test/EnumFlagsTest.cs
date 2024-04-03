@@ -15,7 +15,7 @@ namespace NaughtyAttributes.Test
 
     public class EnumFlagsTest : MonoBehaviour
     {
-        [EnumFlags]
+        [GUIEnumFlags]
         public TestEnum flags0;
 
         public EnumFlagsNest1 nest1;
@@ -24,7 +24,7 @@ namespace NaughtyAttributes.Test
     [System.Serializable]
     public class EnumFlagsNest1
     {
-        [EnumFlags]
+        [GUIEnumFlags]
         public TestEnum flags1;
 
         public EnumFlagsNest2 nest2;
@@ -33,7 +33,7 @@ namespace NaughtyAttributes.Test
     [System.Serializable]
     public class EnumFlagsNest2
     {
-        [EnumFlags]
+        [GUIEnumFlags]
         public TestEnum flags2;
     }
 }

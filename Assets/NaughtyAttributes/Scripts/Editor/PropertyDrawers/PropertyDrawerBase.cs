@@ -15,7 +15,7 @@ namespace NaughtyAttributes.Editor
             }
 
             // Validate
-            ValidatorAttribute[] validatorAttributes = PropertyUtility.GetAttributes<ValidatorAttribute>(property);
+            GUIValidatorAttribute[] validatorAttributes = PropertyUtility.GetAttributes<GUIValidatorAttribute>(property);
             foreach (var validatorAttribute in validatorAttributes)
             {
                 validatorAttribute.GetValidator().ValidateProperty(property);
@@ -57,7 +57,7 @@ namespace NaughtyAttributes.Editor
 
         protected float GetPropertyHeight(SerializedProperty property)
         {
-            SpecialCaseDrawerAttribute specialCaseAttribute = PropertyUtility.GetAttribute<SpecialCaseDrawerAttribute>(property);
+            SangoGUIDrawerSpecialAttribute specialCaseAttribute = PropertyUtility.GetAttribute<SangoGUIDrawerSpecialAttribute>(property);
             if (specialCaseAttribute != null)
             {
                 return specialCaseAttribute.GetDrawer().GetPropertyHeight(property);

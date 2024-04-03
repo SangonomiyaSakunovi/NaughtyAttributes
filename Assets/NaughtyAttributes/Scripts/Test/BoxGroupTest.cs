@@ -4,29 +4,29 @@ namespace NaughtyAttributes.Test
 {
     public class BoxGroupTest : MonoBehaviour
     {
-        [BoxGroup("Integers")]
+        [GUIBoxGroup("Integers")]
         public int int0;
-        [BoxGroup("Integers")]
+        [GUIBoxGroup("Integers")]
         public int int1;
 
-        [BoxGroup("Floats")]
+        [GUIBoxGroup("Floats")]
         public float float0;
-        [BoxGroup("Floats")]
+        [GUIBoxGroup("Floats")]
         public float float1;
 
-        [BoxGroup("Sliders")]
-        [MinMaxSlider(0, 1)]
+        [GUIBoxGroup("Sliders")]
+        [GUISlider(0, 1)]
         public Vector2 slider0;
-        [BoxGroup("Sliders")]
-        [MinMaxSlider(0, 1)]
+        [GUIBoxGroup("Sliders")]
+        [GUISlider(0, 1)]
         public Vector2 slider1;
 
         public string str0;
         public string str1;
 
-        [BoxGroup]
+        [GUIBoxGroup]
         public Transform trans0;
-        [BoxGroup]
+        [GUIBoxGroup]
         public Transform trans1;
     }
 }

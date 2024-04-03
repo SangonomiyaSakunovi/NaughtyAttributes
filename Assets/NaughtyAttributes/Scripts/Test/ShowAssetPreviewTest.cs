@@ -4,10 +4,10 @@ namespace NaughtyAttributes.Test
 {
     public class ShowAssetPreviewTest : MonoBehaviour
     {
-        [ShowAssetPreview]
+        [GUIShowAssets]
         public Sprite sprite0;
 
-        [ShowAssetPreview(96, 96)]
+        [GUIShowAssets(96, 96)]
         public GameObject prefab0;
 
         public ShowAssetPreviewNest1 nest1;
@@ -16,10 +16,10 @@ namespace NaughtyAttributes.Test
     [System.Serializable]
     public class ShowAssetPreviewNest1
     {
-        [ShowAssetPreview]
+        [GUIShowAssets]
         public Sprite sprite1;
 
-        [ShowAssetPreview(96, 96)]
+        [GUIShowAssets(96, 96)]
         public GameObject prefab1;
 
         public ShowAssetPreviewNest2 nest2;
@@ -28,10 +28,10 @@ namespace NaughtyAttributes.Test
     [System.Serializable]
     public class ShowAssetPreviewNest2
     {
-        [ShowAssetPreview]
+        [GUIShowAssets]
         public Sprite sprite2;
 
-        [ShowAssetPreview(96, 96)]
+        [GUIShowAssets(96, 96)]
         public GameObject prefab2;
     }
 }

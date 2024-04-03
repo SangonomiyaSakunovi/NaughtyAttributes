@@ -4,12 +4,12 @@ namespace NaughtyAttributes.Test
 {
     public class InputAxisTest : MonoBehaviour
     {
-        [InputAxis]
+        [GUIInputAxis]
         public string inputAxis0;
 
         public InputAxisNest1 nest1;
 
-        [Button]
+        [GUIButton]
         private void LogInputAxis0()
         {
             Debug.Log(inputAxis0);
@@ -19,7 +19,7 @@ namespace NaughtyAttributes.Test
     [System.Serializable]
     public class InputAxisNest1
     {
-        [InputAxis]
+        [GUIInputAxis]
         public string inputAxis1;
 
         public InputAxisNest2 nest2;
@@ -28,7 +28,7 @@ namespace NaughtyAttributes.Test
     [System.Serializable]
     public struct InputAxisNest2
     {
-        [InputAxis]
+        [GUIInputAxis]
         public string inputAxis2;
     }
 }

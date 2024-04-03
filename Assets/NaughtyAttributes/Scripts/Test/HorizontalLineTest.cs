@@ -4,29 +4,29 @@ namespace NaughtyAttributes.Test
 {
     public class HorizontalLineTest : MonoBehaviour
     {
-        [HorizontalLine(color: EColor.Black)]
+        [GUIHorizontalLine(color: GUIDrawerColor.Black)]
         [Header("Black")]
-        [HorizontalLine(color: EColor.Blue)]
+        [GUIHorizontalLine(color: GUIDrawerColor.Blue)]
         [Header("Blue")]
-        [HorizontalLine(color: EColor.Gray)]
+        [GUIHorizontalLine(color: GUIDrawerColor.Gray)]
         [Header("Gray")]
-        [HorizontalLine(color: EColor.Green)]
+        [GUIHorizontalLine(color: GUIDrawerColor.Green)]
         [Header("Green")]
-        [HorizontalLine(color: EColor.Indigo)]
+        [GUIHorizontalLine(color: GUIDrawerColor.Indigo)]
         [Header("Indigo")]
-        [HorizontalLine(color: EColor.Orange)]
+        [GUIHorizontalLine(color: GUIDrawerColor.Orange)]
         [Header("Orange")]
-        [HorizontalLine(color: EColor.Pink)]
+        [GUIHorizontalLine(color: GUIDrawerColor.Pink)]
         [Header("Pink")]
-        [HorizontalLine(color: EColor.Red)]
+        [GUIHorizontalLine(color: GUIDrawerColor.Red)]
         [Header("Red")]
-        [HorizontalLine(color: EColor.Violet)]
+        [GUIHorizontalLine(color: GUIDrawerColor.Violet)]
         [Header("Violet")]
-        [HorizontalLine(color: EColor.White)]
+        [GUIHorizontalLine(color: GUIDrawerColor.White)]
         [Header("White")]
-        [HorizontalLine(color: EColor.Yellow)]
+        [GUIHorizontalLine(color: GUIDrawerColor.Yellow)]
         [Header("Yellow")]
-        [HorizontalLine(10.0f)]
+        [GUIHorizontalLine(10.0f)]
         [Header("Thick")]
         public int line0;
 
@@ -36,7 +36,7 @@ namespace NaughtyAttributes.Test
     [System.Serializable]
     public class HorizontalLineNest1
     {
-        [HorizontalLine]
+        [GUIHorizontalLine]
         public int line1;
 
         public HorizontalLineNest2 nest2;
@@ -45,7 +45,7 @@ namespace NaughtyAttributes.Test
     [System.Serializable]
     public class HorizontalLineNest2
     {
-        [HorizontalLine]
+        [GUIHorizontalLine]
         public int line2;
     }
 }

@@ -4,7 +4,7 @@ namespace NaughtyAttributes.Test
 {
     public class ResizableTextAreaTest : MonoBehaviour
     {
-        [ResizableTextArea]
+        [GUITextField]
         public string text0;
 
         public ResizableTextAreaNest1 nest1;
@@ -13,7 +13,7 @@ namespace NaughtyAttributes.Test
     [System.Serializable]
     public class ResizableTextAreaNest1
     {
-        [ResizableTextArea]
+        [GUITextField]
         public string text1;
 
         public ResizableTextAreaNest2 nest2;
@@ -22,7 +22,7 @@ namespace NaughtyAttributes.Test
     [System.Serializable]
     public class ResizableTextAreaNest2
     {
-        [ResizableTextArea]
+        [GUITextField]
         public string text2;
     }
 }

@@ -4,7 +4,7 @@ namespace NaughtyAttributes.Test
 {
     public class InfoBoxTest : MonoBehaviour
     {
-        [InfoBox("Normal", EInfoBoxType.Normal)]
+        [GUIInfoBox("Normal", GUIInfoBoxType.Normal)]
         public int normal;
 
         public InfoBoxNest1 nest1;
@@ -13,7 +13,7 @@ namespace NaughtyAttributes.Test
     [System.Serializable]
     public class InfoBoxNest1
     {
-        [InfoBox("Warning", EInfoBoxType.Warning)]
+        [GUIInfoBox("Warning", GUIInfoBoxType.Warning)]
         public int warning;
 
         public InfoBoxNest2 nest2;
@@ -22,7 +22,7 @@ namespace NaughtyAttributes.Test
     [System.Serializable]
     public class InfoBoxNest2
     {
-        [InfoBox("Error", EInfoBoxType.Error)]
+        [GUIInfoBox("Error", GUIInfoBoxType.Error)]
         public int error;
     }
 }

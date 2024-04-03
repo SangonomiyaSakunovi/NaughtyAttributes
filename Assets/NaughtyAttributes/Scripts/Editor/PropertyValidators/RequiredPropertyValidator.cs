@@ -6,7 +6,7 @@ namespace NaughtyAttributes.Editor
     {
         public override void ValidateProperty(SerializedProperty property)
         {
-            RequiredAttribute requiredAttribute = PropertyUtility.GetAttribute<RequiredAttribute>(property);
+            GUIRequiredAttribute requiredAttribute = PropertyUtility.GetAttribute<GUIRequiredAttribute>(property);
 
             if (property.propertyType == SerializedPropertyType.ObjectReference)
             {

@@ -5,22 +5,22 @@ namespace NaughtyAttributes.Test
 {
     public class ReorderableListTest : MonoBehaviour
     {
-        [ReorderableList]
+        [GUIReordList]
         public int[] intArray;
 
-        [ReorderableList]
+        [GUIReordList]
         public List<Vector3> vectorList;
 
-        [ReorderableList]
+        [GUIReordList]
         public List<SomeStruct> structList;
 
-        [ReorderableList]
+        [GUIReordList]
         public GameObject[] gameObjectsList;
 
-        [ReorderableList]
+        [GUIReordList]
         public List<Transform> transformsList;
 
-        [ReorderableList]
+        [GUIReordList]
         public List<MonoBehaviour> monoBehavioursList;
     }
 

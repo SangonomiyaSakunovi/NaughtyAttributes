@@ -4,15 +4,15 @@ namespace NaughtyAttributes.Test
 {
     public class LayerTest : MonoBehaviour
     {
-        [Layer]
+        [GUILayer]
         public int layerNumber0;
 
-        [Layer]
+        [GUILayer]
         public string layerName0;
 
         public LayerNest1 nest1;
 
-        [Button]
+        [GUIButton]
         public void DebugLog()
         {
             Debug.LogFormat("{0} = {1}", nameof(layerNumber0), layerNumber0);
@@ -25,10 +25,10 @@ namespace NaughtyAttributes.Test
     [System.Serializable]
     public class LayerNest1
     {
-        [Layer]
+        [GUILayer]
         public int layerNumber1;
 
-        [Layer]
+        [GUILayer]
         public string layerName1;
 
         public LayerNest2 nest2;
@@ -37,10 +37,10 @@ namespace NaughtyAttributes.Test
     [System.Serializable]
     public struct LayerNest2
     {
-        [Layer]
+        [GUILayer]
         public int layerNumber2;
 
-        [Layer]
+        [GUILayer]
         public string layerName2;
     }
 }

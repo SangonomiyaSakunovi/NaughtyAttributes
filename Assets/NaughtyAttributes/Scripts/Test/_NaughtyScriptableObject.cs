@@ -6,7 +6,7 @@ namespace NaughtyAttributes.Test
     //[CreateAssetMenu(fileName = "NaughtyScriptableObject", menuName = "NaughtyAttributes/_NaughtyScriptableObject")]
     public class _NaughtyScriptableObject : ScriptableObject
     {
-        [Expandable]
+        [GUIExpandable]
         public List<_TestScriptableObjectA> listA;
     }
 }

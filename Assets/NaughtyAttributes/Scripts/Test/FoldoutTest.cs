@@ -4,29 +4,29 @@ namespace NaughtyAttributes.Test
 {
     public class FoldoutTest : MonoBehaviour
     {
-        [Foldout("Integers")]
+        [GUIFoldout("Integers")]
         public int int0;
-        [Foldout("Integers")]
+        [GUIFoldout("Integers")]
         public int int1;
 
-        [Foldout("Floats")]
+        [GUIFoldout("Floats")]
         public float float0;
-        [Foldout("Floats")]
+        [GUIFoldout("Floats")]
         public float float1;
 
-        [Foldout("Sliders")]
-        [MinMaxSlider(0, 1)]
+        [GUIFoldout("Sliders")]
+        [GUISlider(0, 1)]
         public Vector2 slider0;
-        [Foldout("Sliders")]
-        [MinMaxSlider(0, 1)]
+        [GUIFoldout("Sliders")]
+        [GUISlider(0, 1)]
         public Vector2 slider1;
 
         public string str0;
         public string str1;
 
-        [Foldout("Transforms")]
+        [GUIFoldout("Transforms")]
         public Transform trans0;
-        [Foldout("Transforms")]
+        [GUIFoldout("Transforms")]
         public Transform trans1;
     }
 }

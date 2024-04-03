@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace NaughtyAttributes.Editor
 {
-    [CustomPropertyDrawer(typeof(AnimatorParamAttribute))]
+    [CustomPropertyDrawer(typeof(GUIAnimatorParamAttribute))]
     public class AnimatorParamPropertyDrawer : PropertyDrawerBase
     {
         private const string InvalidAnimatorControllerWarningMessage = "Target animator controller is null";
@@ -14,7 +14,7 @@ namespace NaughtyAttributes.Editor
 
         protected override float GetPropertyHeight_Internal(SerializedProperty property, GUIContent label)
         {
-            AnimatorParamAttribute animatorParamAttribute = PropertyUtility.GetAttribute<AnimatorParamAttribute>(property);
+            GUIAnimatorParamAttribute animatorParamAttribute = PropertyUtility.GetAttribute<GUIAnimatorParamAttribute>(property);
             bool validAnimatorController = GetAnimatorController(property, animatorParamAttribute.AnimatorName) != null;
             bool validPropertyType = property.propertyType == SerializedPropertyType.Integer || property.propertyType == SerializedPropertyType.String;
 
@@ -27,7 +27,7 @@ namespace NaughtyAttributes.Editor
         {
             EditorGUI.BeginProperty(rect, label, property);
 
-            AnimatorParamAttribute animatorParamAttribute = PropertyUtility.GetAttribute<AnimatorParamAttribute>(property);
+            GUIAnimatorParamAttribute animatorParamAttribute = PropertyUtility.GetAttribute<GUIAnimatorParamAttribute>(property);
 
             AnimatorController animatorController = GetAnimatorController(property, animatorParamAttribute.AnimatorName);
             if (animatorController == null)

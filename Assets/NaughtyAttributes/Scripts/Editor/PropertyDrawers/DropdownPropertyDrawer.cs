@@ -7,12 +7,12 @@ using System.Collections.Generic;
 
 namespace NaughtyAttributes.Editor
 {
-    [CustomPropertyDrawer(typeof(DropdownAttribute))]
+    [CustomPropertyDrawer(typeof(GUIDropdownAttribute))]
     public class DropdownPropertyDrawer : PropertyDrawerBase
     {
         protected override float GetPropertyHeight_Internal(SerializedProperty property, GUIContent label)
         {
-            DropdownAttribute dropdownAttribute = (DropdownAttribute)attribute;
+            GUIDropdownAttribute dropdownAttribute = (GUIDropdownAttribute)attribute;
             object values = GetValues(property, dropdownAttribute.ValuesName);
             FieldInfo fieldInfo = ReflectionUtility.GetField(PropertyUtility.GetTargetObjectWithProperty(property), property.name);
 
@@ -27,7 +27,7 @@ namespace NaughtyAttributes.Editor
         {
             EditorGUI.BeginProperty(rect, label, property);
 
-            DropdownAttribute dropdownAttribute = (DropdownAttribute)attribute;
+            GUIDropdownAttribute dropdownAttribute = (GUIDropdownAttribute)attribute;
             object target = PropertyUtility.GetTargetObjectWithProperty(property);
 
             object valuesObject = GetValues(property, dropdownAttribute.ValuesName);
@@ -62,7 +62,7 @@ namespace NaughtyAttributes.Editor
                     NaughtyEditorGUI.Dropdown(
                         rect, property.serializedObject, target, dropdownField, label.text, selectedValueIndex, values, displayOptions);
                 }
-                else if (valuesObject is IDropdownList)
+                else if (valuesObject is IGUIDropdownList)
                 {
                     // Current value
                     object selectedValue = dropdownField.GetValue(target);
@@ -72,7 +72,7 @@ namespace NaughtyAttributes.Editor
                     int selectedValueIndex = -1;
                     List<object> values = new List<object>();
                     List<string> displayOptions = new List<string>();
-                    IDropdownList dropdown = (IDropdownList)valuesObject;
+                    IGUIDropdownList dropdown = (IGUIDropdownList)valuesObject;
 
                     using (IEnumerator<KeyValuePair<string, object>> dropdownEnumerator = dropdown.GetEnumerator())
                     {
@@ -158,7 +158,7 @@ namespace NaughtyAttributes.Editor
             }
 
             if ((values is IList && dropdownField.FieldType == GetElementType(values)) ||
-                (values is IDropdownList))
+                (values is IGUIDropdownList))
             {
                 return true;
             }

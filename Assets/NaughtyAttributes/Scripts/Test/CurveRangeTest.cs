@@ -4,16 +4,16 @@ namespace NaughtyAttributes.Test
 {
     public class CurveRangeTest : MonoBehaviour
     {
-        [CurveRange(0f, 0f, 1f, 1f, EColor.Yellow)]
+        [GUICurveRange(0f, 0f, 1f, 1f, GUIDrawerColor.Yellow)]
         public AnimationCurve[] curves;
 
-        [CurveRange(-1, -1, 1, 1, EColor.Red)]
+        [GUICurveRange(-1, -1, 1, 1, GUIDrawerColor.Red)]
         public AnimationCurve curve;
 
-        [CurveRange(EColor.Orange)]
+        [GUICurveRange(GUIDrawerColor.Orange)]
         public AnimationCurve curve1;
 
-        [CurveRange(0, 0, 10, 10)]
+        [GUICurveRange(0, 0, 10, 10)]
         public AnimationCurve curve2;
 
         public CurveRangeNest1 nest1;
@@ -21,7 +21,7 @@ namespace NaughtyAttributes.Test
         [System.Serializable]
         public class CurveRangeNest1
         {
-            [CurveRange(0, 0, 1, 1, EColor.Green)]
+            [GUICurveRange(0, 0, 1, 1, GUIDrawerColor.Green)]
             public AnimationCurve curve;
 
             public CurveRangeNest2 nest2;
@@ -30,7 +30,7 @@ namespace NaughtyAttributes.Test
         [System.Serializable]
         public class CurveRangeNest2
         {
-            [CurveRange(0, 0, 5, 5, EColor.Blue)]
+            [GUICurveRange(0, 0, 5, 5, GUIDrawerColor.Blue)]
             public AnimationCurve curve;
         }
     }
